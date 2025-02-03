@@ -1,0 +1,42 @@
+-- Game Script Loader for Univers Hub
+-- Automatically loads the appropriate script based on the game's PlaceId
+
+-- List of supported games with their PlaceIds and script URLs
+local gameScripts = {
+    [100902716985467] = "https://raw.githubusercontent.com/lumecraftor/Scriptupdates/refs/heads/main/BeeMasterSimulator", -- Bee Master Simulator
+}
+
+-- Get the current game's PlaceId
+local currentGameId = game.PlaceId
+local scriptURL = gameScripts[currentGameId]
+
+-- Notify function to display messages to the user
+local function sendNotification(title, text, duration)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = title,
+        Text = text,
+        Duration = duration or 5
+    })
+end
+
+-- Check if the game is in the supported list
+if scriptURL then
+    -- Notify the player that the script is being loaded
+    sendNotification("HyperMatrix", "Game found! Loading the script...")
+
+    -- Attempt to load and execute the script
+    local success, result = pcall(function()
+        local response = game:HttpGet(scriptURL)
+        loadstring(response)()
+    end)
+
+    -- Handle errors during script loading
+    if not success then
+        sendNotification("HyperMatrix - Error", "Failed to load the script. Check the console for details.")
+        warn("Error loading script: " .. tostring(result))
+    end
+else
+    -- Notify the player if the game is not supported
+    sendNotification("HyperMatrix - Error", "Game not supported. Please try another game.")
+    warn("Game PlaceId not found in the supported game list.")
+end
