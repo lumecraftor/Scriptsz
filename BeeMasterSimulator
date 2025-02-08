@@ -183,21 +183,6 @@ if game.PlaceId == 89377518329073 then
         end
     })
 
-  -- ===================== COMMUNITY TAB ===================== --
-    local communityTab = Window:CreateTab("🎉 Community", nil)
-    communityTab:CreateSection("Join Us")
-    communityTab:CreateParagraph({
-        Title = "Join the Univers Hub Community!",
-        Content = "Click below to copy our Discord link to your clipboard."
-    })
-    communityTab:CreateButton({
-        Name = "Copy Discord Link",
-        Callback = function()
-            setclipboard("https://discord.gg/PwbtqEDT")
-            Rayfield:Notify({ Title = "Link Copied!", Content = "Discord link copied to clipboard.", Duration = 3 })
-        end
-    })
-
    -- Save Settings Button
     settingsTab:CreateButton({
         Name = "Save Settings",
