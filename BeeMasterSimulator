@@ -1,7 +1,7 @@
--- Ensure the script only runs in Bee Master Simulator
-if game.PlaceId == 100902716985467 then
+-- Ensure the script only runs in Bee king Simulator
+if game.PlaceId == 89377518329073 then
     -- Script version and setup
-    local CurrentVersion = "🌟 • HyperMatrix ⚙️ | Bee Master Simulator 🐝"
+    local CurrentVersion = "🌟 • HyperMatrix ⚙️ | Bee king Simulator 👑"
     local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
     -- Create Main Window
@@ -11,8 +11,8 @@ if game.PlaceId == 100902716985467 then
         LoadingSubtitle = "By HyperMatrix Team ⚙️",
         ConfigurationSaving = {
             Enabled = true,
-            FolderName = "BeeMasterSimulatorConfigs",
-            FileName = "BeeMasterSimulator"
+            FolderName = "BeeKingSimulatorConfigs",
+            FileName = "BeeKingSimulator"
         },
         Discord = { Enabled = true, Invite = "PwbtqEDT", RememberJoins = true }
     })
@@ -23,7 +23,7 @@ if game.PlaceId == 100902716985467 then
     homeTab:CreateSection("Welcome to Univers Hub!")
     homeTab:CreateParagraph({
         Title = "🌟 About",
-        Content = "HyperMatrix ⚙️ enhances your Bee Master Simulator experience with powerful and easy-to-use features."
+        Content = "HyperMatrix ⚙️ enhances your Bee King Simulator 👑 experience with powerful and easy-to-use features."
     })
 
     -- Main Tab
